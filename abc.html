@@ -1,0 +1,36 @@
+<doctype html>
+    <meta name="veiwport" content="width=device-width,initial-scale=1.0">
+<head> Qr code generator using java script </head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="container">
+        <p>enter your text or url</p>
+        <input type="text" placeholder="text or url" id="qrtext">
+       
+        <div id="imgbox">
+            <img src="#" id="qrimg">
+        </div>
+        
+        <button onclick="generateQr()">click here to generate qr</button>
+        
+    </div>
+    <script>
+        let imgbox = document.getElementById("imgbox");
+        let qrimg = document.getElementById("qrimg");
+        let qrtext = document.getElementById("qrtext");
+
+        function generateQr(){      
+            if(qrtext.value.length > 0){
+                console.log(qrtext.value);
+                qrimg.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;
+                imgbox.classList.add("show-img");
+
+            }
+               
+
+        }
+         
+    </script>
+    
+</body>
+
